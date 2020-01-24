@@ -1,0 +1,150 @@
+body{
+	background: rgb(248, 217, 217);
+	font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+}
+
+
+
+main, #content{
+	width: 750px;
+	margin: 0 auto;
+}
+@media (max-width: 755px){
+	main, #content{
+		width: 100%;
+	}
+}
+
+canvas{
+	background-color: rgb(255, 255, 255);
+	border: 5px solid rgb(0, 0, 0);
+	border-radius: 10px;
+}
+
+#am{
+	background: white;
+	border: 4px solid black;
+	padding: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#container{
+	padding-top: 10px;
+	border: 5px solid rgb(0, 0, 0);
+	border-radius: 10px;
+	transition: 0.4s;
+	padding-bottom: 20px;
+	margin: 0 auto;
+	width: 400px;
+	background: #fff;
+	box-sizing: border-box;
+}
+@media(max-width: 755px){
+	#container{
+		width: 100%;
+	}
+}
+
+.flex{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal{
+	text-align: center;
+}
+.modal input{
+	width: 150px;
+}
+@media(max-width: 755px){
+	.modal input{
+		width: 80%;
+	}
+}
+
+.center{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#tree{
+	margin-right: 3px;
+}
+
+#select{
+	padding-bottom: 15px;
+}
+
+#pre, #suf{
+	width: 150px;
+	margin: 0 15px 30px 15px;
+}
+@media(max-width:755px){
+	#pre, #suf{
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+}
+@media(min-width:756px){
+	#presuf{
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.textbox{
+	border: none;
+	border-bottom: 2px dashed #000;
+	background: rgb(249, 249, 249);
+	padding-top: 4px;
+	margin-top: 6px;
+}
+
+#tree, #btn{
+	height: 30px;
+}
+
+#start{
+	background: rgb(228, 228, 228);
+	padding: 5px 15px;
+	border: double 4px #000;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#howto{
+	margin-left: 10px;
+	cursor: help;
+}
+
+#container.hidden{
+	transform: translate(0, -700px);
+}
+
+#option{
+	border: 3px solid black;
+	background: #fff;
+	border-radius: 4px;
+	padding:4px 15px;
+	cursor: pointer;
+}
+
+#content{
+	width: 755px;
+	height: 700px; 
+	box-sizing: border-box;
+}
+@media(max-width: 755px){
+	#content{
+		width: 100%;
+}
+}
+.hyde{
+	display: none;
+}
+
+

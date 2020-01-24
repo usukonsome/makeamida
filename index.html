@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>あみだくじ</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<main>
+	<div class="center"><a id="am">あみだを作る</a></div>
+	<div class="center"><a id="option" class="hyde">あみだを作り直す</a></div>
+		<div id="container" class="hidden">
+			<div class="modal flex">
+				<select name="text" id="tree">
+					<option value="">--</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+				</select>
+				<p>本で作る</p>
+			</div>
+
+			<div id="select" class="modal hyde">
+				<div id="presuf">
+				<div id ="pre">
+					<p>選択肢を入力してね</p>
+					<div id="precontainer"></div>
+				</div>
+				<div id ="suf">
+					<p>結果を入力してね</p>
+					<div id="sufcontainer"></div>
+				</div>
+			</div>
+				<div class="modal">
+					<a id="start">start</a>
+				</div>
+			</div>
+			<input type="submit" id="howto" value="使い方">
+		</div>
+	</main>
+	
+		<div id="content">
+		<canvas width="755" height="700" id="canvas" class="hyde">
+			canvas not suportted///////////
+		</canvas>
+	</div>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
