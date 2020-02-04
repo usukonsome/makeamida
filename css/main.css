@@ -1,16 +1,19 @@
 body{
-	background: rgb(248, 217, 217);
+	background: #f0adad;
 	font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
 }
 
-
-
-main, #content{
+main{
 	width: 750px;
 	margin: 0 auto;
+	box-sizing: border-box;
+	/* position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto; */
 }
-@media (max-width: 755px){
-	main, #content{
+@media (max-width: 750px){
+	main{
 		width: 100%;
 	}
 }
@@ -29,27 +32,74 @@ canvas{
 	cursor: pointer;
 }
 
+#picture img{
+	border: 5px solid;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius: 10px;
+}
+@media (max-width: 800px){
+	#picture img{
+		width: 95%;
+	}
+}
+
 #container{
-	padding-top: 10px;
+	/* padding-top: 10px; */
 	border: 5px solid rgb(0, 0, 0);
 	border-radius: 10px;
 	transition: 0.4s;
 	padding-bottom: 20px;
-	margin: 0 auto;
+	margin: 0 10px 0;
+	/* position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	margin: auto; */
 	width: 400px;
+	/* z-index: 1; */
 	background: #fff;
 	box-sizing: border-box;
 }
-@media(max-width: 755px){
+@media(min-width: 751px){
 	#container{
-		width: 100%;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	margin: auto;
 	}
+}
+@media(max-width: 750px){
+	#container{
+		width: 95%;
+		position: absolute;
+		top: 10px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+}
+
+#close{
+	position: absolute;
+	top: -10px;
+	right: 0;
+	cursor: pointer;
+	
+}
+#close img{
+	width: 35px;
 }
 
 .flex{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	margin-top: 10px;
 }
 
 .modal{
@@ -57,10 +107,13 @@ canvas{
 }
 .modal input{
 	width: 150px;
+	height: 20px;
+	font-size: 18px;
 }
-@media(max-width: 755px){
+@media(max-width: 400px){
 	.modal input{
-		width: 80%;
+		width: 55%;
+		text-align: center;
 	}
 }
 
@@ -72,6 +125,7 @@ canvas{
 
 #tree{
 	margin-right: 3px;
+	font-size: 16px;
 }
 
 #select{
@@ -80,16 +134,16 @@ canvas{
 
 #pre, #suf{
 	width: 150px;
-	margin: 0 15px 30px 15px;
+	margin: 0 15px 40px 15px;
 }
-@media(max-width:755px){
+@media(max-width: 400px){
 	#pre, #suf{
 		width: 90%;
 		margin: 0 auto;
-		margin-bottom: 30px;
+		margin-bottom: 50px;
 	}
 }
-@media(min-width:756px){
+@media(min-width: 401px){
 	#presuf{
 		display: flex;
 		justify-content: center;
@@ -109,20 +163,32 @@ canvas{
 }
 
 #start{
-	background: rgb(228, 228, 228);
-	padding: 5px 15px;
+	background: rgb(211, 211, 211);
+	padding: 5px 35px;
 	border: double 4px #000;
 	border-radius: 4px;
 	cursor: pointer;
+	font-size: 18px;
 }
 
 #howto{
-	margin-left: 10px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 10px 0 0 20px;
 	cursor: help;
+	border-bottom: 2px solid;
 }
 
-#container.hidden{
-	transform: translate(0, -700px);
+#erase{
+	font-size: 12px;
+	float: right;
+	margin: 10px 10px 0;
+	cursor: pointer;
+	border-bottom: 2px solid;
+}
+
+.hidden{
+	transform: translate(0, -1700px);
 }
 
 #option{
@@ -137,14 +203,30 @@ canvas{
 	width: 755px;
 	height: 700px; 
 	box-sizing: border-box;
+	margin: 0 auto;
 }
-@media(max-width: 755px){
+@media(max-width: 750px){
 	#content{
 		width: 100%;
 }
 }
 .hyde{
 	display: none;
+}
+
+#swich{
+	position: absolute;
+	text-align: center;
+}
+#swich img{
+	width:15px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.point{
+	position: absolute;
+	top: 55px;
 }
 
 

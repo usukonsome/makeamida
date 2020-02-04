@@ -13,6 +13,9 @@
 	<div class="center"><a id="option" class="hyde">あみだを作り直す</a></div>
 		<div id="container" class="hidden">
 			<div class="modal flex">
+				<div id="close" class="hyde">
+					<img src="cross_24.png" alt="閉じる">
+				</div>
 				<select name="text" id="tree">
 					<option value="">--</option>
 					<option value="3">3</option>
@@ -52,12 +55,18 @@
 					<a id="start">start</a>
 				</div>
 			</div>
-			<input type="submit" id="howto" value="使い方">
+			<a id="howto">使い方</a>
+			<a id="erase" class="hyde">入力をクリア</a>
+		</div>
+		<div id="picture" class="hyde">
+			<img src="イラスト.jpg">
 		</div>
 	</main>
+
 	
-		<div id="content">
-		<canvas width="755" height="700" id="canvas" class="hyde">
+	<div id="content"  class="hidden">
+		<div id="swich"></div>
+		<canvas width="755" height="700" id="canvas">
 			canvas not suportted///////////
 		</canvas>
 	</div>
