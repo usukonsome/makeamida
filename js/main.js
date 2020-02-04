@@ -50,9 +50,8 @@
 		}
 
 		for (let x = 1; x <= tree; x++){
-			ctx.font = "normal 15px 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'";
+			ctx.font = "bold 15px 'Avenir'";
 			ctx.textAlign = 'center';
-			ctx.lineWidth = 1;
 			words = precontainer[x-1];
 			words = spliteByLength(words, 3);
 			for (let y = 0; y < words.length && y < 2; y++){
@@ -79,7 +78,7 @@
 		}
 
 		for (let x = 1; x <= tree; x++){
-			ctx.font = "normal 15px Verdana 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'";
+			ctx.font = "bold 15px 'Avenir'";
 			ctx.textAlign = 'center';
 			words = sufcontainer2[x-1];
 			words = spliteByLength(words, 3);
