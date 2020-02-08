@@ -227,6 +227,7 @@ canvas{
 .point{
 	position: absolute;
 	top: 55px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 
