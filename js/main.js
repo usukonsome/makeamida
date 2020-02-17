@@ -176,13 +176,24 @@
 		});
 	});
 
-	document.getElementById('tree').addEventListener('change', () =>{
-		let tree = document.getElementById('tree').value;
+	const make = document.getElementById('make');
+	make.addEventListener('click', () =>{
+		let tree0 = document.getElementById('tree0').value;
+		let tree1 = document.getElementById('tree1').value;
+		tree = tree0 + tree1
 		tree = Number(tree);
 
 			if (document.getElementById('prefix_1') != null){     //あみだの本数を変えるとき、既にある選択肢入力ボックスをclearする
 				const predq=document.getElementById('precontainer');
+				const predqchild=predq.childNodes;
 				const sufdq=document.getElementById('sufcontainer');
+				const sufdqchild=sufdq.childNodes;
+				for (i =0; i < predqchild.length; i++) { //親コンテナを引数にとって最初のコンテンツを消すのを繰り返してるから難しいかなあ
+					precontainer[i] = predqchild[i].value;//pushだと無限に増えるからコンテナの数より多くなってしまう可能性
+				}
+				for (i =0; i < sufdqchild.length; i++) { //親コンテナを引数にとって最初のコンテンツを消すのを繰り返してるから難しいかなあ
+					sufcontainer[i] = sufdqchild[i].value;//pushだと無限に増えるからコンテナの数より多くなってしまう可能性
+				}
 				while (predq.firstChild) {
 					predq.removeChild(predq.firstChild);
 				}
@@ -245,6 +256,7 @@
 		});
 	});
 
+
 	document.getElementById('option').addEventListener('click', () =>{
 		document.getElementById('container').classList.toggle('hyde');
 		document.getElementById('content').classList.toggle('hidden');
@@ -256,8 +268,15 @@
 	});
 	document.getElementById('erase').addEventListener('click', () =>{
 		const inputs = document.getElementsByClassName('textbox');
-		for (let i =0; i <inputs.length; i++){
+		for (let i =0; i < inputs.length; i++){
 			inputs[i].value = "";
+			console.log(precontainer);
+		}
+		if (precontainer.length > 0){
+			precontainer.length = 0;
+		}
+		if (sufcontainer.length > 0){
+		sufcontainer.length = 0;
 		}
 	});
 }
