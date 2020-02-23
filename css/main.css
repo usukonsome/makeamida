@@ -180,6 +180,7 @@ canvas{
 	padding: 0;
 	}
 #selectlist li{
+	display:block;
 	margin: 3px;
 	font-size: 40px;
 }
