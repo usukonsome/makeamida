@@ -261,9 +261,14 @@ canvas{
 	padding-bottom: 15px;
 }
 
-#pre, #suf{
-	width: 150px;
-	margin: 0 15px 40px 15px;
+#pre{
+	margin: 0 10px 40px 20px;
+
+}
+
+#suf{
+	/* width: 150px; */
+	margin: 0 20px 40px 10px;
 }
 @media(max-width: 400px){
 	#pre, #suf{
