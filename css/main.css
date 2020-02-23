@@ -107,15 +107,16 @@ canvas{
 }
 
 .modal{
+	vertical-align: bottom;
 	text-align: center;
 }
-.modal input{
+.modal a{
 	width: 150px;
 	height: 20px;
 	font-size: 18px;
 }
 @media(max-width: 400px){
-	.modal input{
+	.modal a{
 		width: 55%;
 		text-align: center;
 	}
@@ -168,7 +169,6 @@ canvas{
 	flex-wrap: wrap;
 	list-style: none;
 	border-radius: 4px;
-	font-size: 20px;
 	padding: 0;
 	margin: 0;
 	background: white;
@@ -176,17 +176,17 @@ canvas{
 }
 #selectlist li{
 	margin: 3px;
-	font-size: 30px;
+	font-size: 40px;
 }
 
 #numberright{
 	position: absolute;
 	top: 37px;
-	left: -45px;
+	left: -56px;
 	display: flex;
 	align-items: flex-start;
-	width: 90px;
-	height: 160px;
+	width: 130px;
+	height: 210px;
 	background: white;
 	border-bottom-left-radius: 10px;
 	z-index: 2;
@@ -197,10 +197,11 @@ canvas{
 	position: absolute;
 	top: 37px;
 	left: 41px;
-	width: 130px;
-	height: 160px;
+	width: 145px;
+	height: 210px;
 	display: flex;
 	flex-wrap: wrap;
+	align-items: flex-start;
 	background: white;
 	border-left: 2px solid;
 	/* border: 2px solid; */
@@ -227,6 +228,9 @@ canvas{
 }
 
 #make{
+	display: flex;
+	align-items: center;
+	justify-content: center; 
 	width: 50px;
 	font-size: 16px;
 	cursor: pointer;
@@ -239,9 +243,6 @@ canvas{
 }
 #make:active{
 	background: #bbb;
-}
-#make p{
-	margin-top: 3px;
 }
 
 #select{
