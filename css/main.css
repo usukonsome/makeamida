@@ -185,8 +185,8 @@ canvas{
 	left: -56px;
 	display: flex;
 	align-items: flex-start;
-	width: 130px;
-	height: 210px;
+	width: 150px;
+	height: 230px;
 	background: white;
 	border-bottom-left-radius: 10px;
 	z-index: 2;
@@ -197,8 +197,8 @@ canvas{
 	position: absolute;
 	top: 37px;
 	left: 41px;
-	width: 145px;
-	height: 210px;
+	width: 160px;
+	height: 230px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
