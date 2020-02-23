@@ -178,9 +178,8 @@ canvas{
 }
 #selectlist ul{
 	padding: 0;
-}
+	}
 #selectlist li{
-	list-style: none;
 	margin: 3px;
 	font-size: 40px;
 }
@@ -197,6 +196,7 @@ canvas{
 	border-bottom-left-radius: 10px;
 }
 #numberright ul{
+	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -215,6 +215,7 @@ canvas{
 	z-index: 200;
 }
 #numberleft ul{
+	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
