@@ -67,7 +67,7 @@ canvas{
 	background: #fff;
 	box-sizing: border-box;
 }
-@media(min-width: 768px){
+@media(min-width: 451px){
 	#container{
 	position: absolute;
 	top: 10px;
@@ -76,7 +76,7 @@ canvas{
 	margin: auto;
 	}
 }
-@media(max-width: 767px){
+@media(max-width: 450px){
 	#container{
 		width: 95%;
 		position: absolute;
@@ -290,6 +290,7 @@ canvas{
 	background: rgb(249, 249, 249);
 	padding-top: 4px;
 	margin-top: 6px;
+	width: 150px;
 }
 
 .tree, #btn, #make{
