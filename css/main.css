@@ -38,6 +38,7 @@ canvas{
 	right: 0;
 	margin: auto;
 	border-radius: 10px;
+	z-index: 10;
 }
 @media (max-width: 800px) and (min-height: 568px){
 	#picture img{
@@ -176,6 +177,7 @@ canvas{
 	background: white;
 	cursor: pointer;
 	z-index: 2;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 #selectlist ul{
 	padding: 0;
@@ -227,6 +229,9 @@ canvas{
 	background: #ddd;
 	padding:0 10px;
 	border-radius: 4px;
+}
+.numbers:active{
+	background: #aaa;
 }
 
 #shadow{
@@ -358,7 +363,6 @@ canvas{
 	width:15px;
 	cursor: pointer;
 	opacity: 0.5;
-	z-index: 10;
 }
 
 .point{

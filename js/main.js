@@ -343,7 +343,6 @@
 		const inputs = document.getElementsByClassName('textbox');
 		for (let i =0; i < inputs.length; i++){
 			inputs[i].value = "";
-			console.log(precontainer);
 		}
 		if (precontainer.length > 0){
 			precontainer.length = 0;
