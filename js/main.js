@@ -9,11 +9,13 @@
 
 	const w = document.getElementById('content').clientWidth;
 	const h = document.getElementById('content').clientHeight;
+	const mainwidth = document.getElementById('clientwidth').clientWidth;
 
 	canvas.width = w -10; //canvasはbox-sizing合わせてくれないのでこっちで合わせる
 	canvas.height = h - 10;
 
-	const treesize = 20;
+	const treesize = 17;
+	const height = 20;
 	const lineStart = 40;
 	const precontainer = [];
 	let sufcontainer = [];
@@ -55,7 +57,11 @@
 			words = precontainer[x-1];
 			words = spliteByLength(words, 3);
 			for (let y = 0; y < words.length && y < 2; y++){
-				ctx.fillText(words[y], (canvas.width / (tree + 1)) * x, 30 + 15 * y);
+				if ((tree < 10) && ( mainwidth < 600 )){
+					ctx.fillText(words[y], 50 * x, 25 + 15 * y);
+				} else {
+					ctx.fillText(words[y], (canvas.width / (tree + 1)) * x, 25 + 15 * y);
+				}
 			}
 		}
 
@@ -83,7 +89,11 @@
 			words = sufcontainer2[x-1];
 			words = spliteByLength(words, 3);
 			for (let y = 0; y < words.length; y++){
-				ctx.fillText(words[y],(canvas.width / (tree + 1)) * x, 585 + 15 * y);
+				if ((tree < 10) && ( mainwidth < 600 )){
+					ctx.fillText(words[y], 50 * x, 425 + 15 * y);
+				} else {
+					ctx.fillText(words[y],(canvas.width / (tree + 1)) * x, 425 + 15 * y);
+				}
 			}
 		}
 
@@ -98,22 +108,38 @@
 										red[y-1][liten] = [0,0,0];
 										liten++;
 					ctx.beginPath();
-					ctx.moveTo((canvas.width / (tree + 1)) * x ,y * 25 + lineStart);//スタート地点を変更しやすいように変数にしました
-					ctx.lineTo((canvas.width / (tree + 1)) * x ,(y * 25 + 25 + lineStart));
-					ctx.stroke();
+					if ((tree < 10) && ( mainwidth < 600 )){
+						ctx.moveTo( 50 * x ,y * height + lineStart);//スタート地点を変更しやすいように変数にしました
+						ctx.lineTo( 50 * x ,(y * height + height + lineStart));
+						ctx.stroke();
+					} else {
+						ctx.moveTo((canvas.width / (tree + 1)) * x ,y * height + lineStart);//スタート地点を変更しやすいように変数にしました
+						ctx.lineTo((canvas.width / (tree + 1)) * x ,(y * height + height + lineStart));
+						ctx.stroke();
+					}
 				} else {
 										red[y-1][liten]= [x, x + 1, y];
 										liten++;
 										red[y-1][liten]= [x, x + 1, y];
 										liten++;
 					ctx.beginPath(); //x座標 width,y座標 height
-					ctx.moveTo((canvas.width / (tree + 1)) * x, y * 25 + lineStart);
-					ctx.lineTo((canvas.width / (tree + 1)) * x,(y * 25 + 25 + lineStart));
-					ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * 25 + 25 + lineStart));
-					ctx.moveTo((canvas.width / (tree + 1)) * (x + 1), y * 25 + lineStart);
-					ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * 25 + 25 + lineStart));
-					ctx.stroke();
-					x++;
+					if ((tree < 10) && ( mainwidth < 600 )){
+						ctx.moveTo( 50 * x, y * height + lineStart);
+						ctx.lineTo( 50 * x,(y * height + height + lineStart));
+						ctx.lineTo( 50 * (x + 1),(y * height + height + lineStart));
+						ctx.moveTo( 50 * (x + 1), y * height + lineStart);
+						ctx.lineTo( 50 * (x + 1),(y * height + height + lineStart));
+						ctx.stroke();
+						x++;
+					} else {
+						ctx.moveTo((canvas.width / (tree + 1)) * x, y * height + lineStart);
+						ctx.lineTo((canvas.width / (tree + 1)) * x,(y * height + height + lineStart));
+						ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * height + height + lineStart));
+						ctx.moveTo((canvas.width / (tree + 1)) * (x + 1), y * height + lineStart);
+						ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * height + height + lineStart));
+						ctx.stroke();
+						x++;
+					}
 				}
 			}
 		}
@@ -131,34 +157,65 @@
 								ctx.putImageData(undo,0,0);
 								const r = x; 
 								for(let y = 1; y <= treesize; y++){
-									ctx.moveTo((canvas.width / (tree + 1)) * x, y * 25 + lineStart);
+									if ((tree < 10) && ( mainwidth < 600 )){
+										ctx.moveTo( 50 * x, y * height + lineStart);
+									} else {
+										ctx.moveTo((canvas.width / (tree + 1)) * x, y * height + lineStart);
+									}
 								 if(red[y-1][x -1][0]===x){
 										ctx.beginPath();
-										ctx.moveTo((canvas.width / (tree + 1)) * x, y * 25 + lineStart);
-										ctx.lineTo((canvas.width / (tree + 1)) * x,(y * 25 + 25 + lineStart));
-										ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * 25 + 25 + lineStart));
-										ctx.stroke();
-										x++;
+										if ((tree < 10) && ( mainwidth < 600 )){
+											ctx.moveTo( 50 * x, y * height + lineStart);
+											ctx.lineTo( 50 * x,(y * height + height + lineStart));
+											ctx.lineTo( 50 * (x + 1),(y * height + height + lineStart));
+											ctx.stroke();
+											x++;
+										} else {
+											ctx.moveTo((canvas.width / (tree + 1)) * x, y * height + lineStart);
+											ctx.lineTo((canvas.width / (tree + 1)) * x,(y * height + height + lineStart));
+											ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * height + height + lineStart));
+											ctx.stroke();
+											x++;
+										}
 									} else if(red[y-1][x -1][1] ===x){  // 配列の中からred[x、x+1 ,y]を見つけて、あったら
 										ctx.beginPath();
-										ctx.moveTo((canvas.width / (tree + 1)) * x, y * 25 + lineStart);
-										ctx.lineTo((canvas.width / (tree + 1)) * x,(y * 25 + 25 + lineStart));
-										ctx.lineTo((canvas.width / (tree + 1)) * (x - 1),(y * 25 + 25 + lineStart));
-										ctx.stroke();
-										x--;
+										if ((tree < 10) && ( mainwidth < 600 )){
+											ctx.moveTo( 50 * x, y * height + lineStart);
+											ctx.lineTo( 50 * x,(y * height + height + lineStart));
+											ctx.lineTo( 50 * (x - 1),(y * height + height + lineStart));
+											ctx.stroke();
+											x--;
+										} else {
+											ctx.moveTo((canvas.width / (tree + 1)) * x, y * height + lineStart);
+											ctx.lineTo((canvas.width / (tree + 1)) * x,(y * height + height + lineStart));
+											ctx.lineTo((canvas.width / (tree + 1)) * (x - 1),(y * height + height + lineStart));
+											ctx.stroke();
+											x--;
+										}
 									} else{
-										ctx.beginPath();
-										ctx.moveTo((canvas.width / (tree + 1)) * x ,y * 25 + lineStart);
-										ctx.lineTo((canvas.width / (tree + 1)) * x ,(y * 25 + 25 + lineStart));
-										ctx.stroke();
-
+										if ((tree < 10) && ( mainwidth < 600 )){
+											ctx.beginPath();
+											ctx.moveTo( 50 * x ,y * height + lineStart);
+											ctx.lineTo( 50 * x ,(y * height + height + lineStart));
+											ctx.stroke();
+										} else {
+											ctx.beginPath();
+											ctx.moveTo((canvas.width / (tree + 1)) * x ,y * height + lineStart);
+											ctx.lineTo((canvas.width / (tree + 1)) * x ,(y * height + height + lineStart));
+											ctx.stroke();
+										}	
 									}
 								}
 								x = r;
 							});
 							document.getElementById("swich").appendChild(point);
-							let leftpos = ((canvas.width / (tree + 1)) * x) - 3; //-3でちょうど線が真ん中になる
-							point.style.left = leftpos + "px";
+							if ((tree < 10) && ( mainwidth < 600 )){
+								let leftpos = (50 * x) - 3; //-3でちょうど線が真ん中になる
+								point.style.left = leftpos + "px";
+							} else {
+								let leftpos = ((canvas.width / (tree + 1)) * x) - 3; //-3でちょうど線が真ん中になる
+								point.style.left = leftpos + "px";
+							}
 						}
 									
 	}
@@ -171,15 +228,29 @@
 	document.getElementById('howto').addEventListener('click', () =>{
 		const picture = document.getElementById('picture');
 		picture.classList.remove('hyde');
+		const top = document.getElementById('option');
+		top.scrollIntoView();
 		picture.addEventListener('click', () =>{
 			picture.classList.add('hyde');
 		});
 	});
 
+	const numberclick = document.getElementById('numberclick');
+	const selectlist = document.getElementById('selectlist');
+	const shadow = document.getElementById('shadow');
+	numberclick.addEventListener('click', () =>{
+		selectlist.classList.remove('hidden');
+		shadow.classList.remove('hyde');
+		shadow.addEventListener('click', () =>{
+			shadow.classList.add('hyde');
+			selectlist.classList.add('hidden');
+		});
+	});
+
 	const make = document.getElementById('make');
 	make.addEventListener('click', () =>{
-		let tree0 = document.getElementById('tree0').value;
-		let tree1 = document.getElementById('tree1').value;
+		let tree0 = document.getElementById('selectnumber0').innerHTML;
+		let tree1 = document.getElementById('selectnumber').innerHTML;
 		tree = tree0 + tree1
 		tree = Number(tree);
 
@@ -238,6 +309,8 @@
 		document.getElementById('erase').classList.remove('hyde');
 		document.getElementById('select').classList.remove('hyde');
 		document.getElementById('option').classList.remove('hyde');
+		document.getElementById('shadow').classList.add('hyde');
+		selectlist.classList.add('hidden');
 
 		document.getElementById('start').addEventListener('click', ()=>{
 			if (document.getElementsByClassName('point') != null){     //あみだの本数を変えるとき、既にあるスタート丸ボタンをclearする
@@ -252,10 +325,10 @@
 			document.getElementById('container').classList.add('hyde');
 			document.getElementById('option').classList.remove('hyde');
 			document.getElementById('content').classList.remove('hidden');
-								console.log(red);
+			const top = document.getElementById('option');
+			top.scrollIntoView();//オプションだけ一部非対応機種がある
 		});
 	});
-
 
 	document.getElementById('option').addEventListener('click', () =>{
 		document.getElementById('container').classList.toggle('hyde');
@@ -278,7 +351,15 @@
 		if (sufcontainer.length > 0){
 		sufcontainer.length = 0;
 		}
+		const top = document.getElementById('option');
+		top.scrollIntoView();//オプションだけ一部非対応機種がある
 	});
 }
+		function sel0(li){
+			selectnumber0.innerHTML = li;
+		};
+		function sel(li){
+			selectnumber.innerHTML = li;
+		};
 drawamida();
 }
