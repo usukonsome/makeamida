@@ -298,6 +298,14 @@ canvas{
 	margin-top: 6px;
 	width: 150px;
 }
+@media(max-width: 400px){
+	.textbox{
+		display: block;
+		width: 200px;
+		text-align: center;
+		margin: 0 auto;
+	}
+}
 
 .tree, #btn, #make{
 	height: 30px;
