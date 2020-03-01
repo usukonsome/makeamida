@@ -9,11 +9,11 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<main id="clientwidth">
-	<div class="center"><a id="am">あみだを作る</a></div>
+	<main id="clientwidth"> <!-- このidで取得した画面幅であみだの幅を決める -->
+	<div class="center"><a id="makeamida">あみだを作る</a></div>
 	<div class="center"><a id="option" class="hyde">あみだを作り直す</a></div>
 		<div id="container" class="hidden">
-			<div class="modal flex">
+			<div id="flex" class="modal">
 				<div id="close" class="hyde">
 					<img src="cross_24.png" alt="閉じる">
 				</div>
@@ -24,7 +24,7 @@
 							<div id="selectnumber0">0</div>
 							<img src="矢印アイコン　下4.png" width="9" alt="">
 						</span>
-						<span class="number space">
+						<span class="number left-space">
 							<p id="selectnumber">4</p>
 							<img src="矢印アイコン　下4.png" width="9" alt="">
 						</span>
@@ -55,7 +55,7 @@
 			</div>
 				</div>
 				<p>本で</p>
-				<a id="make">作る</a>
+				<a id="makeWordArr">作る</a>
 			</div>
 			<div id="shadow" class="hyde"></div>
 
@@ -63,11 +63,11 @@
 				<div id="presuf">
 				<div id ="pre">
 					<p>選択肢を入力してね</p>
-					<div id="precontainer"></div>
+					<div id="prefixArray"></div>
 				</div>
 				<div id ="suf">
 					<p>結果を入力してね</p>
-					<div id="sufcontainer"></div>
+					<div id="suffixArray"></div>
 				</div>
 			</div>
 				<div class="modal">
@@ -88,6 +88,6 @@
 			canvas not suportted///////////
 		</canvas>
 	</div>
-	<script type="text/javascript" src="js/main2.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
