@@ -218,43 +218,43 @@
 			}
 		}
 
-		const container = document.getElementById('container');
-		const option = document.getElementById('option');
+		const mainContents = document.getElementById('main_contents');
+		const continueAmida = document.getElementById('continue_amida');
 		const shadow = document.getElementById('shadow');
-		const erase = document.getElementById('erase');
-		const content = document.getElementById('content');
+		const clearWord = document.getElementById('clear_word');
+		const amidaResult = document.getElementById('amida_result');
 		
-		const makeamida = document.getElementById('makeamida');
-		makeamida.addEventListener('click', () =>{
-			container.classList.remove('hidden');
-			makeamida.classList.add('hyde');
+		const makeAmida = document.getElementById('make_amida');
+		makeAmida.addEventListener('click', () =>{
+			mainContents.classList.remove('hidden');
+			makeAmida.classList.add('hyde');
 		});
 
-		document.getElementById('howto').addEventListener('click', () =>{
+		document.getElementById('description').addEventListener('click', () =>{
 			picture = document.getElementById('picture');
 			picture.classList.remove('hyde');
-			option.scrollIntoView();
+			continueAmida.scrollIntoView();
 			picture.addEventListener('click', () =>{
 				picture.classList.add('hyde');
 			});
 		});
 
-		const selectlist = document.getElementById('selectlist');
-		document.getElementById('numberclick').addEventListener('click', () =>{
-			selectlist.classList.remove('hidden');
+		const numberList = document.getElementById('number_list');
+		document.getElementById('number_nav').addEventListener('click', () =>{
+			numberList.classList.remove('hidden');
 			shadow.classList.remove('hyde');
 			shadow.addEventListener('click', () =>{
 				shadow.classList.add('hyde');
-				selectlist.classList.add('hidden');
+				numberList.classList.add('hidden');
 			});
 		});
 
-		document.getElementById('makeWordArr').addEventListener('click', () => {
-			const preDoc = document.getElementById('prefixArray');
-			const sufDoc = document.getElementById('suffixArray');
+		document.getElementById('make_word_arr').addEventListener('click', () => {
+			const preDoc = document.getElementById('prefix_array');
+			const sufDoc = document.getElementById('suffix_array');
 
-			tree0 = document.getElementById('selectnumber0').innerHTML;
-			tree1 = document.getElementById('selectnumber').innerHTML;
+			tree0 = document.getElementById('selectnumber10').innerHTML;
+			tree1 = document.getElementById('selectnumber1').innerHTML;
 			tree = tree0 + tree1
 			tree = Number(tree);
 
@@ -301,11 +301,11 @@
 			}
 			suffixArray.length = sufDoc.childElementCount; //この一行がないと削除されたsuffixの文字列があみだに表示される
 
-			erase.classList.remove('hyde');
-			document.getElementById('select').classList.remove('hyde');
-			option.classList.remove('hyde');
+			clearWord.classList.remove('hyde');
+			document.getElementById('select_list').classList.remove('hyde');
+			continueAmida.classList.remove('hyde');
 			shadow.classList.add('hyde');
-			selectlist.classList.add('hidden');
+			numberList.classList.add('hidden');
 
 			document.getElementById('start').addEventListener('click', ()=>{
 				if (document.getElementsByClassName('point') != null){ //あみだの本数を変えるとき、既にあるスタート丸ボタンをclearする
@@ -316,26 +316,26 @@
 				}	
 
 				amida(tree);
-				container.classList.add('hyde');
-				option.classList.remove('hyde');
-				content.classList.remove('hidden');
-				option.scrollIntoView();
+				mainContents.classList.add('hyde');
+				continueAmida.classList.remove('hyde');
+				amidaResult.classList.remove('hyde');
+				continueAmida.scrollIntoView();
 			});
 		});
 
 		const close = document.getElementById('close');
-		option.addEventListener('click', () =>{
-			container.classList.toggle('hyde');
-			content.classList.toggle('hidden');
+		continueAmida.addEventListener('click', () =>{
+			mainContents.classList.toggle('hyde');
+			amidaResult.classList.toggle('hyde');
 			close.classList.remove('hyde');
 		});
 		
 		close.addEventListener('click', () =>{
-			container.classList.add('hyde');
-			content.classList.remove('hidden');
+			mainContents.classList.add('hyde');
+			amidaResult.classList.remove('hyde');
 		});
 
-		erase.addEventListener('click', () =>{
+		clearWord.addEventListener('click', () =>{
 			inputs = document.getElementsByClassName('textbox');
 			for (let i =0; i < inputs.length; i++){
 				inputs[i].value = "";
@@ -346,15 +346,15 @@
 			if (suffixArray.length > 0){
 			suffixArray.length = 0;
 			}
-			option.scrollIntoView();
+			continueAmida.scrollIntoView();
 		});
 	}
 
-	function sel0(li){
-		selectnumber0.innerHTML = li;
+	function select10(li){
+		selectnumber10.innerHTML = li;
 	};
-	function sel(li){
-		selectnumber.innerHTML = li;
+	function select1(li){
+		selectnumber1.innerHTML = li;
 	};
 
 	drawamida();

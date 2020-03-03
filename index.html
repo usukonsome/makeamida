@@ -10,84 +10,87 @@
 </head>
 <body>
 	<main id="clientwidth"> <!-- このidで取得した画面幅であみだの幅を決める -->
-	<div class="center"><a id="makeamida">あみだを作る</a></div>
-	<div class="center"><a id="option" class="hyde">あみだを作り直す</a></div>
-		<div id="container" class="hidden">
-			<div id="flex" class="modal">
+		<div class="heading">
+			<a id="make_amida">あみだを作る</a>
+		</div>
+		<div class="heading">
+			<a id="continue_amida" class="hyde">あみだを作り直す</a>
+		</div>
+
+		<div id="main_contents" class="hidden">
+			<div class="nav modal">
 				<div id="close" class="hyde">
 					<img src="cross_24.png" alt="閉じる">
 				</div>
-
-				<div class="tree selectcolor">
-					<div id="numberclick">
+				<div class="number_container">
+					<div id="number_nav">
 						<span class="number">
-							<div id="selectnumber0">0</div>
+							<div id="selectnumber10">0</div>
 							<img src="矢印アイコン　下4.png" width="9" alt="">
 						</span>
 						<span class="number left-space">
-							<p id="selectnumber">4</p>
+							<p id="selectnumber1">4</p>
 							<img src="矢印アイコン　下4.png" width="9" alt="">
 						</span>
 					</div>
-					<div id="selectlist" class="hidden">
-					
-						<div id="numberright">
+					<div id="number_list" class="hidden">
+						<div id="number_10">
 							<ul>
-								<li class="numbers" onclick="sel0(this.value)" value="">0</li>
-								<li class="numbers" onclick="sel0(this.value)" value="1">1</li>
+								<li class="numbers" onclick="select10(this.value)" value="">0</li>
+								<li class="numbers" onclick="select10(this.value)" value="1">1</li>
 							</ul>
 						</div>
-						<div id="numberleft">
+						<div id="number_1">
 							<ul>
-								<li class="numbers" onclick="sel(this.value)" value="0">0</li>
-								<li class="numbers" onclick="sel(this.value)" value="1">1</li>
-								<li class="numbers" onclick="sel(this.value)" value="2">2</li>
-								<li class="numbers" onclick="sel(this.value)" value="3">3</li>
-								<li class="numbers" onclick="sel(this.value)" value="4">4</li>
-								<li class="numbers" onclick="sel(this.value)" value="5">5</li>
-								<li class="numbers" onclick="sel(this.value)" value="6">6</li>
-								<li class="numbers" onclick="sel(this.value)" value="7">7</li>
-								<li class="numbers" onclick="sel(this.value)" value="8">8</li>
-								<li class="numbers" onclick="sel(this.value)" value="9">9</li>
+								<li class="numbers" onclick="select1(this.value)" value="0">0</li>
+								<li class="numbers" onclick="select1(this.value)" value="1">1</li>
+								<li class="numbers" onclick="select1(this.value)" value="2">2</li>
+								<li class="numbers" onclick="select1(this.value)" value="3">3</li>
+								<li class="numbers" onclick="select1(this.value)" value="4">4</li>
+								<li class="numbers" onclick="select1(this.value)" value="5">5</li>
+								<li class="numbers" onclick="select1(this.value)" value="6">6</li>
+								<li class="numbers" onclick="select1(this.value)" value="7">7</li>
+								<li class="numbers" onclick="select1(this.value)" value="8">8</li>
+								<li class="numbers" onclick="select1(this.value)" value="9">9</li>
 							</ul>
 						</div>
-				</ul>
-			</div>
+					</div>
 				</div>
 				<p>本で</p>
-				<a id="makeWordArr">作る</a>
+				<a id="make_word_arr">作る</a>
 			</div>
+			
 			<div id="shadow" class="hyde"></div>
 
-			<div id="select" class="modal hyde">
-				<div id="presuf">
-				<div id ="pre">
-					<p>選択肢を入力してね</p>
-					<div id="prefixArray"></div>
+			<div id="select_list" class="modal hyde">
+				<div id="prefix_suffix">
+					<div id ="prefix">
+						<p>選択肢を入力してね</p>
+						<div id="prefix_array"></div>
+					</div>
+					<div id ="suffix">
+						<p>結果を入力してね</p>
+						<div id="suffix_array"></div>
+					</div>
 				</div>
-				<div id ="suf">
-					<p>結果を入力してね</p>
-					<div id="suffixArray"></div>
-				</div>
-			</div>
 				<div class="modal">
 					<a id="start">start</a>
 				</div>
 			</div>
-			<a id="howto">使い方</a>
-			<a id="erase" class="hyde">入力をクリア</a>
+			<a id="description">使い方</a>
+			<a id="clear_word" class="hyde">入力をクリア</a>
 		</div>
 		<div id="picture" class="hyde">
 			<img src="イラスト.jpg">
 		</div>
 	</main>
 	
-	<div id="content"  class="hidden">
+	<div id="amida_result"  class="hyde">
 		<div id="swich"></div>
 		<canvas width="755" height="530" id="canvas">
-			canvas not suportted///////////
+			canvas not supported.....別のブラウザでお試しください
 		</canvas>
 	</div>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js2/main.js"></script>
 </body>
 </html>
