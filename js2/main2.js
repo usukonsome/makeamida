@@ -63,7 +63,7 @@
 
         for (var y = 0; y < words.length && y < 2; y++) {
           //y < 2で選択肢を2行に収める
-          if (tree < 10) {
+          if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
             //狭い画面幅で少しでも見やすく
             ctx.fillText(words[y], 50 * x, wordStart + 15 * y);
           } else {
@@ -97,7 +97,7 @@
         words = spliteByLength(words, 3);
 
         for (var _y = 0; _y < words.length; _y++) {
-          if (tree < 10) {
+          if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
             ctx.fillText(words[_y], 50 * _x3, wordEnd + 15 * _y);
           } else {
             ctx.fillText(words[_y], canvas.width / (tree + 1) * _x3, wordEnd + 15 * _y);
@@ -121,7 +121,7 @@
             redPoint++;
             ctx.beginPath();
 
-            if (tree < 10) {
+            if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
               ctx.moveTo(50 * _x4, _y2 * height + lineStart);
               ctx.lineTo(50 * _x4, _y2 * height + height + lineStart);
               ctx.stroke();
@@ -138,7 +138,7 @@
             redPoint++;
             ctx.beginPath();
 
-            if (tree < 10) {
+            if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
               ctx.moveTo(50 * _x4, _y2 * height + lineStart);
               ctx.lineTo(50 * _x4, _y2 * height + height + lineStart);
               ctx.lineTo(50 * (_x4 + 1), _y2 * height + height + lineStart);
@@ -173,7 +173,7 @@
           r = _x6;
 
           for (var _y3 = 1; _y3 <= treesize; _y3++) {
-            if (tree < 10) {
+            if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
               ctx.moveTo(50 * _x6, _y3 * height + lineStart);
             } else {
               ctx.moveTo(canvas.width / (tree + 1) * _x6, _y3 * height + lineStart);
@@ -183,7 +183,7 @@
               //redLine配列の情報:[y座標[横棒始点のx, 横棒終点のx]]
               ctx.beginPath();
 
-              if (tree < 10) {
+              if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
                 ctx.moveTo(50 * _x6, _y3 * height + lineStart);
                 ctx.lineTo(50 * _x6, _y3 * height + height + lineStart);
                 ctx.lineTo(50 * (_x6 + 1), _y3 * height + height + lineStart);
@@ -199,7 +199,7 @@
             } else if (redLine[_y3 - 1][_x6 - 1][1] === _x6) {
               ctx.beginPath();
 
-              if (tree < 10) {
+              if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
                 ctx.moveTo(50 * _x6, _y3 * height + lineStart);
                 ctx.lineTo(50 * _x6, _y3 * height + height + lineStart);
                 ctx.lineTo(50 * (_x6 - 1), _y3 * height + height + lineStart);
@@ -213,7 +213,7 @@
                 _x6--;
               }
             } else {
-              if (tree < 10) {
+              if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
                 ctx.beginPath();
                 ctx.moveTo(50 * _x6, _y3 * height + lineStart);
                 ctx.lineTo(50 * _x6, _y3 * height + height + lineStart);
@@ -231,7 +231,7 @@
         });
         document.getElementById("swich").appendChild(point);
 
-        if (tree < 10) {
+        if (tree < 10 && clientwidth < 600 && userAgent.indexOf('msie') === -1) {
           position = 50 * _x6 - 3; //-3でちょうど線が真ん中になる
 
           point.style.left = position + "px";
