@@ -115,10 +115,10 @@
 							ctx.stroke();
 						}
 					} else {
-						redLine[y - 1][redPoint]= [x, x + 1];
-						redPoint++;
-						redLine[y - 1][redPoint]= [x, x + 1]; //同じ座標を同じ列に２つ置く(右回り用と左回り用)
-						redPoint++;
+						for (let t = 0; t < 2; t++){
+							redLine[y - 1][redPoint]= [x, x + 1]; //同じ座標を同じ列に２つ置く(右回り用と左回り用)
+							redPoint++;
+						}
 
 						ctx.beginPath();
 						if ((tree < 10) && ( clientwidth < 600 )){
@@ -147,7 +147,7 @@
 			ctx.strokeStyle = '#e65353';
 			ctx.lineWidth = 3;
 
-			for (let x = 1; x <=tree; x++){
+			for (let x = 1; x <= tree; x++){
 				point = document.createElement('img');
 				point.src = "丸icon.jpg";
 				point.setAttribute("class","point");
