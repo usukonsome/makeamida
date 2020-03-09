@@ -1,4 +1,4 @@
-{ //こちらはbabelでIE11用にコンパイルした物です。元のコードは隣のjsフォルダの中にあります
+{
   'use strict';
 
   function drawamida() {

@@ -107,11 +107,11 @@
 						ctx.beginPath();
 						if ((tree < 10) && ( clientwidth < 600 )){
 							ctx.moveTo( 50 * x ,y * height + lineStart);
-							ctx.lineTo( 50 * x ,(y * height + height + lineStart));
+							ctx.lineTo( 50 * x ,((y + 1) * height + lineStart));
 							ctx.stroke();
 						} else {
 							ctx.moveTo((canvas.width / (tree + 1)) * x ,y * height + lineStart);
-							ctx.lineTo((canvas.width / (tree + 1)) * x ,(y * height + height + lineStart));
+							ctx.lineTo((canvas.width / (tree + 1)) * x ,((y + 1) * height + lineStart));
 							ctx.stroke();
 						}
 					} else {
@@ -123,18 +123,18 @@
 						ctx.beginPath();
 						if ((tree < 10) && ( clientwidth < 600 )){
 							ctx.moveTo( 50 * x, y * height + lineStart);
-							ctx.lineTo( 50 * x,(y * height + height + lineStart));
-							ctx.lineTo( 50 * (x + 1),(y * height + height + lineStart));
+							ctx.lineTo( 50 * x,((y + 1) * height + lineStart));
+							ctx.lineTo( 50 * (x + 1),((y + 1) * height + lineStart));
 							ctx.moveTo( 50 * (x + 1), y * height + lineStart);
-							ctx.lineTo( 50 * (x + 1),(y * height + height + lineStart));
+							ctx.lineTo( 50 * (x + 1),((y + 1) * height + lineStart));
 							ctx.stroke();
 							x++;
 						} else {
 							ctx.moveTo((canvas.width / (tree + 1)) * x, y * height + lineStart);
-							ctx.lineTo((canvas.width / (tree + 1)) * x,(y * height + height + lineStart));
-							ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * height + height + lineStart));
+							ctx.lineTo((canvas.width / (tree + 1)) * x,((y + 1) * height + lineStart));
+							ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),((y + 1) * height + lineStart));
 							ctx.moveTo((canvas.width / (tree + 1)) * (x + 1), y * height + lineStart);
-							ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * height + height + lineStart));
+							ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),((y + 1) * height + lineStart));
 							ctx.stroke();
 							x++;
 						}
@@ -164,14 +164,14 @@
 							ctx.beginPath();
 							if ((tree < 10) && ( clientwidth < 600 )){
 								ctx.moveTo( 50 * x, y * height + lineStart);
-								ctx.lineTo( 50 * x,(y * height + height + lineStart));
-								ctx.lineTo( 50 * (x + 1),(y * height + height + lineStart));
+								ctx.lineTo( 50 * x,((y + 1) * height + lineStart));
+								ctx.lineTo( 50 * (x + 1),((y + 1) * height + lineStart));
 								ctx.stroke();
 								x++;
 							} else {
 								ctx.moveTo((canvas.width / (tree + 1)) * x, y * height + lineStart);
-								ctx.lineTo((canvas.width / (tree + 1)) * x,(y * height + height + lineStart));
-								ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),(y * height + height + lineStart));
+								ctx.lineTo((canvas.width / (tree + 1)) * x,((y + 1) * height + lineStart));
+								ctx.lineTo((canvas.width / (tree + 1)) * (x + 1),((y + 1) * height + lineStart));
 								ctx.stroke();
 								x++;
 							}
@@ -179,14 +179,14 @@
 							ctx.beginPath();
 							if ((tree < 10) && ( clientwidth < 600 )){
 								ctx.moveTo( 50 * x, y * height + lineStart);
-								ctx.lineTo( 50 * x,(y * height + height + lineStart));
-								ctx.lineTo( 50 * (x - 1),(y * height + height + lineStart));
+								ctx.lineTo( 50 * x,((y + 1) * height + lineStart));
+								ctx.lineTo( 50 * (x - 1),((y + 1) * height + lineStart));
 								ctx.stroke();
 								x--;
 							} else {
 								ctx.moveTo((canvas.width / (tree + 1)) * x, y * height + lineStart);
-								ctx.lineTo((canvas.width / (tree + 1)) * x,(y * height + height + lineStart));
-								ctx.lineTo((canvas.width / (tree + 1)) * (x - 1),(y * height + height + lineStart));
+								ctx.lineTo((canvas.width / (tree + 1)) * x,((y + 1) * height + lineStart));
+								ctx.lineTo((canvas.width / (tree + 1)) * (x - 1),((y + 1) * height + lineStart));
 								ctx.stroke();
 								x--;
 							}
@@ -194,12 +194,12 @@
 							if ((tree < 10) && ( clientwidth < 600 )){
 								ctx.beginPath();
 								ctx.moveTo( 50 * x ,y * height + lineStart);
-								ctx.lineTo( 50 * x ,(y * height + height + lineStart));
+								ctx.lineTo( 50 * x ,((y + 1) * height + lineStart));
 								ctx.stroke();
 							} else {
 								ctx.beginPath();
 								ctx.moveTo((canvas.width / (tree + 1)) * x ,y * height + lineStart);
-								ctx.lineTo((canvas.width / (tree + 1)) * x ,(y * height + height + lineStart));
+								ctx.lineTo((canvas.width / (tree + 1)) * x ,((y + 1) * height + lineStart));
 								ctx.stroke();
 							}
 						}
